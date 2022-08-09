@@ -27,6 +27,7 @@ class ConnectedActivity : Activity() {
         listItems.add("Item3")
         listItems.add("item4")
         listItems.add("item5")
+        listItems.add("item6")
 
         numberOfItems = listItems.size
         updateData()
@@ -35,13 +36,15 @@ class ConnectedActivity : Activity() {
     private fun updateData() {
         //remove last item
         listItems.removeLast()
+        numberOfItems = listItems.size
     }
 
     private fun displayData() {
         val stringBuilder = StringBuilder()
-        for (i in 0 until numberOfItems -1) {
+        for (i in 0 until numberOfItems) {
             stringBuilder.append(
                 listItems[i].trimIndent()
+
             )
             stringBuilder.appendLine()
         }
